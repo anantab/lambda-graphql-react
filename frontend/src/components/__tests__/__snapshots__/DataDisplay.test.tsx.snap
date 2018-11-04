@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders data correctly 1`] = `
+<table
+  className="table table-bordered"
+>
+  <tbody>
+    <tr>
+      <td
+        colSpan={2}
+      >
+        07-May-18
+      </td>
+    </tr>
+    <tr>
+      <td
+        className="table-secondary"
+        colSpan={2}
+      >
+        BTC
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>
+          Buy
+        </strong>
+      </td>
+      <td>
+        <strong>
+          Sell
+        </strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        $
+        34.98
+      </td>
+      <td>
+        $
+        37.01
+      </td>
+    </tr>
+    <tr>
+      <td>
+        9:15AM
+      </td>
+      <td>
+        12:30PM
+      </td>
+    </tr>
+    <tr>
+      <td
+        colSpan={2}
+      >
+        Profit: $
+        2.03
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

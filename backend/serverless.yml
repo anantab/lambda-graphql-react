@@ -1,0 +1,68 @@
+service: ProfitCalculator
+
+custom:
+  currentStage: ${opt:stage, self:provider.stage}
+  webpack:
+    includeModules: true
+  serverless-offline:
+    port: 3002
+  
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region : ap-southeast-2
+  timeout: 60
+  apiKeys:
+    - ${self:service}-${self:custom.currentStage}
+  
+  usagePlan: 
+    UsagePlanName: ${self:service}-${self:custom.currentStage}
+    quota:
+      limit: 10000000
+      offset: 0
+      period: WEEK
+    throttle:
+      burstLimit: 1000
+      rateLimit: 1000
+   
+resources:
+  Description:  Profit Calculator
+
+functions:
+  graphql: 
+    handler: lambdas/graphql.graphqlHandler
+    events:
+    - http:
+        path: graphql
+        method: post
+        cors: true
+
+  playground: 
+    handler: lambdas/graphql.graphiqlHandler
+    events:
+    - http:
+        path: graphiql
+        method: get
+        cors: true       
+  
+package:
+  individually: false
+  exclude:
+    - '**'
+    - '!node_modules/**'
+    - 'node_modules/**/README.*'
+    - 'node_modules/**/LICENSE'
+    - 'node_modules/**/test/**'
+  include:
+    - ./lambdas/**/*.js
+    - ./lambdas/**/*.json
+    
+
+  
+
+   

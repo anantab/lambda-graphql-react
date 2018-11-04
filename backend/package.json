@@ -1,0 +1,48 @@
+{
+  "name": "codechallenge",
+  "version": "1.0.0",
+  "description": "Provides graphql API with AWS Api Gateway and Lambda Function",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Ananta Bhandari",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.2",
+    "jest": "^23.6.0",
+    "serverless-offline": "^3.31.0",
+    "serverless-webpack": "^5.2.0",
+    "ts-jest": "^23.10.4",
+    "ts-loader": "^5.3.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "webpack": "^4.24.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "jest": {
+    "verbose": true,
+    "roots": [
+      "<rootDir>/lambdas"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "dependencies": {
+    "apollo-server-lambda": "^1.4.0",
+    "graphql": "^0.13.2",
+    "graphql-playground-middleware-lambda": "^1.7.6",
+    "graphql-tools": "^3.1.1"
+  }
+}

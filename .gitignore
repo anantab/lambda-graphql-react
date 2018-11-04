@@ -1,0 +1,6 @@
+node_modules/
+webpack.stats.json
+coverage/
+.serverless
+.webpack
+.DS_Store
